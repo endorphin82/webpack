@@ -1,5 +1,6 @@
 'use strict'
 
-module.export = message => {
-  alert(`Welcome ${message}`)
+module.exports = function (message) {
+  debbuger;
+  alert(`Welcome ${message}`);
 }
