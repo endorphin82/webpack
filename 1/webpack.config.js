@@ -1,6 +1,7 @@
 'use strict'
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
+const webpack = require ('webpack');
 
 module.exports = {
   mode: 'development',
@@ -17,6 +18,9 @@ module.exports = {
   devtool: NODE_ENV == 'development' ? "cheap-inline-module-source-map" : null,
   /*  devtool: "eval"*/
   plugins: [
-
+        new webpack.EnvironmentPlugin('NODE_ENV', 'USER')
+    /*
+    NODE_ENV=development webpack
+     */
   ]
 }
