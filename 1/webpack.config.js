@@ -19,7 +19,7 @@ module.exports = {
   /*  devtool: "eval"*/
   plugins: [
         new webpack.DefinePlugin({
-          NODE_ENV: NODE_ENV
+          NODE_ENV: JSON.stringify(NODE_ENV)
         })
   ]
 }
