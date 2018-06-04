@@ -1,5 +1,7 @@
 'use strict'
-const NODE_ENV = process.env.NODE_ENV ||
+
+const NODE_ENV = process.env.NODE_ENV || 'development';
+
 module.exports = {
   mode: 'development',
   entry: './home.js',
@@ -7,11 +9,11 @@ module.exports = {
     filename: '../build.js',
     library: "home"
   },
-  watch: true,
+  watch: NODE_ENV == 'development',
 
   watchOptions: {
     aggregateTimeout: 300
   },
-  devtool: "cheap-inline-module-source-map"
+  devtool: NODE_ENV == 'development' ? "cheap-inline-module-source-map" : null
   /*  devtool: "eval"*/
 }
