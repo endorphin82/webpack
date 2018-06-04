@@ -18,9 +18,8 @@ module.exports = {
   devtool: NODE_ENV == 'development' ? "cheap-inline-module-source-map" : null,
   /*  devtool: "eval"*/
   plugins: [
-        new webpack.EnvironmentPlugin('NODE_ENV', 'USER')
-    /*
-    NODE_ENV=development webpack
-     */
+        new webpack.DefinePlugin({
+          NODE_ENV: NODE_ENV
+        })
   ]
 }
