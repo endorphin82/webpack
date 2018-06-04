@@ -14,6 +14,9 @@ module.exports = {
   watchOptions: {
     aggregateTimeout: 300
   },
-  devtool: NODE_ENV == 'development' ? "cheap-inline-module-source-map" : null
+  devtool: NODE_ENV == 'development' ? "cheap-inline-module-source-map" : null,
   /*  devtool: "eval"*/
+  plugins: [
+
+  ]
 }

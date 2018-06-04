@@ -1,6 +1,9 @@
 'use strict'
 
 module.exports = function (message) {
-  debbuger;
+  if (process.env.NODE_ENV == 'development'){
+    console.log(message)
+  }
+
   alert(`Welcome ${message}`);
 }
