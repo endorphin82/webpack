@@ -1,4 +1,5 @@
 let path = require ('path')
+let ExtractTextPlugin = require("extract-text-webpack-plugin")
 let conf = {
   entry: './src/index.js',
   output: {
@@ -15,10 +16,34 @@ let conf = {
           test: /\.js$/,
           loader: 'babel-loader',
           exclude: '/node_modules/'
+      },
+      {
+        test: /\.css$/,
+        // exclude: '/node_modules/',
+        use: ExtractTextPlugin.extract({
+          // fallback: "style-loader",
+          use: "css-loader"
+        })
+       /*
+        use: [
+          'style-loader',
+          'css-loader'
+        ] */
+
       }
     ]
   },
-  devtool: 'eval-source-map'
-}
+  plugins: [
+    new ExtractTextPlugin("styles.css")
+  ]
+};
 
-module.exports = conf
+module.exports = (env, options) => {
+  let production = options.mode === 'production'
+  conf.devtool = production
+        ? false
+        // ? 'source-map'
+        : 'eval-sourcemap'
+  // console.log(options);
+  return conf
+}

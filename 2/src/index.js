@@ -9,3 +9,7 @@ console.log(some.merge({
 },{
   b: 2
 }))
+
+
+import './css/style.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
