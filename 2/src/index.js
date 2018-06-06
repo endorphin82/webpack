@@ -1,5 +1,11 @@
-import $ from 'jquery'
-import avg from './same'
+//import $ from 'jquery'
+import some from './same'
 
-$('.title').html('Some text!')
-console.log(avg(1, 4, 8))
+//$('.title').html('Some text!')
+console.log(some.avg(1, 4, 8))
+console.log(some.max(1, 4, 8))
+console.log(some.merge({
+  a: 1
+},{
+  b: 2
+}))

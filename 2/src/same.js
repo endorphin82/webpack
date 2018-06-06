@@ -1,4 +1,4 @@
-function sum (...numbers) {
+function sum (...numbers){
   let sum = 0
 
   for (let i = 0; i < numbers.length; i++) {
@@ -7,8 +7,29 @@ function sum (...numbers) {
   return sum
 }
 
-function avg (...numbers) {
-  return sum(...numbers) / numbers.length
+class SomeMath{
+  avg (...numbers) {
+    return sum (...numbers) / numbers.length
+  }
+
+  max(...numbers){
+    let max = -Infinity
+
+    for(let i = 0; i < numbers.length; i++){
+      if(numbers[i] > max){
+        max = numbers[i]
+      }
+    }
+  }
+
+  merge(a, b){
+  console.log(a, b)
+    return {
+      ...a,
+      ...b
+    }
+  }
+
 }
 
-export default avg
+export default new SomeMath();
